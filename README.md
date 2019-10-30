@@ -4,7 +4,7 @@ Reservation and lodging information microservice for a hotel reservation web app
 ## Table of Contents
 1. [Requirements](#requirements)
 1. [API](#API)
-1. [Dependencies](#dependencies)
+1. [Dependencies](#Installing Dependencies)
 
 ## Requirements
 - Node v8.15.x
