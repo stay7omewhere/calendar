@@ -1,10 +1,5 @@
-# siestaNbrekkie Calendar Reservation
+# Calendar Reservation
 Reservation and lodging information microservice for a hotel reservation web application
-
-## Related Projects
-  - https://github.com/siestaNbrekkie/reviews
-  - https://github.com/siestaNbrekkie/image-carousel
-  - https://github.com/siestaNbrekkie/reservations
 
 ## Table of Contents
 1. [Usage](#Usage)
@@ -16,6 +11,19 @@ Reservation and lodging information microservice for a hotel reservation web app
 - MySQL v5.7.x
 - npm v6.10.x
 - docker
+
+## API
+### URL
+`localhost:3004/rooms/:id`
+Dynamically render playlist based on id of the entrypoint url.
+
+### GET
+`/api/:id`
+Retrieve a playlist based on id.
+
+### POST
+`/api/:id``
+Update the liked status of a song based on id.
 
 ### Installing Dependencies
 From within the root directory
@@ -45,4 +53,4 @@ npm run build
 npm run server
 ```
 
-6. Go to see the component at `localhost:3004/rooms/1` 
+6. Go to see the component at `localhost:3004/rooms/1`
