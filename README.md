@@ -15,14 +15,17 @@ Reservation and lodging information microservice for a hotel reservation web app
 ## API
 ### URL
 `localhost:3004/rooms/:id`
+
 Renders listing page based on the room id.
 
 ### GET
 `/api/:id`
+
 Fills the reserved dates based on id.
 
 ### POST
 `/api/:id`
+
 Updates the calendar based on the id.
 
 ## Installing Dependencies
