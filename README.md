@@ -10,20 +10,20 @@ Reservation and lodging information microservice for a hotel reservation web app
 - Node v8.15.x
 - MySQL v5.7.x
 - npm v6.10.x
-- docker
+- Docker
 
 ## API
 ### URL
 `localhost:3004/rooms/:id`
-Dynamically render playlist based on id of the entrypoint url.
+Renders listing page based on the room id.
 
 ### GET
 `/api/:id`
-Retrieve a playlist based on id.
+Fills the reserved dates based on id.
 
 ### POST
-`/api/:id``
-Update the liked status of a song based on id.
+`/api/:id`
+Updates the calendar based on the id.
 
 ## Installing Dependencies
 From within the root directory
