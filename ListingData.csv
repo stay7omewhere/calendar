@@ -1,0 +1,6 @@
+id,listing_name,mon_min,tue_min,wed_min,thu_min,fri_min,sat_min,sun_min,max_stay
+1,San_Francisco,1,1,1,1,1,1,1,10
+2,Daly_City,2,2,2,2,2,2,2,20
+3,Burlingame,1,2,3,4,5,6,7,15
+4,Oakland,2,3,4,5,6,7,8,14
+5,San_Mateo,3,4,5,6,7,8,9,12

@@ -21,12 +21,24 @@ Renders listing page based on the room id.
 ### GET
 `/api/:id`
 
-Fills the reserved dates based on id.
+Reads a file by id for bookedDates, dateRestrictions
 
 ### POST
 `/api/:id`
 
-Updates the calendar based on the id.
+ Creates new reservation based on the ID, checkIn, checkOut.
+
+
+### PUT
+`/api/:id`
+
+Updates booked date/s by the id.
+
+### DELETE
+`/api/:id`
+
+Deletes booked date/s by the id.
+
 
 ## Installing Dependencies
 From within the root directory

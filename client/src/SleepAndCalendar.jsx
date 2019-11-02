@@ -51,6 +51,7 @@ class SleepAndCalendar extends React.Component {
     };
 
     this.handleReserveClick = () => {
+      console.log('reserve is clicked')
       const parts = document.URL.split('/');
       const lastSegment = parts.pop() || parts.pop(); // handle potential trailing slash
       const data = {
@@ -149,6 +150,7 @@ class SleepAndCalendar extends React.Component {
     axios
       .get(`http://localhost:3004/api/${lastSegment}`)
       .then(res => {
+        console.log('get',res)
         this.setState({
           bookedDates: new Set(res.data.bookedDates),
           dateRestrictions: res.data.dateRestrictions,
