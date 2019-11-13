@@ -4,28 +4,41 @@ CREATE DATABASE postgresSDC;
 
 USE postgresSDC;
 
-CREATE TABLE listing.main(
-    listing_ID  SERIAL NOT NULL PRIMARY KEY,
-    listing_name VARCHAR(255),
-    mon_min int DEFAULT 0 NOT NULL,
-    tue_min int DEFAULT 0 NOT NULL,
-    wed_min int DEFAULT 0 NOT NULL,
-    thu_min int DEFAULT 0 NOT NULL,
-    fri_min int DEFAULT 0 NOT NULL,
-    sat_min int DEFAULT 0 NOT NULL,
-    sun_min int DEFAULT 0 NOT NULL,
-    max_stay int NOT NULL,
+CREATE TABLE Listing(
+    Listing_ID  SERIAL NOT NULL PRIMARY KEY,
+    Mon_min smallint DEFAULT 0 NOT NULL,
+    Tue_min smallint DEFAULT 0 NOT NULL,
+    Wed_min smallint DEFAULT 0 NOT NULL,
+    Thu_min smallint DEFAULT 0 NOT NULL,
+    Fri_min smallint DEFAULT 0 NOT NULL,
+    Sat_min smallint DEFAULT 0 NOT NULL,
+    Sun_min smallint DEFAULT 0 NOT NULL,
+    Max_stay smallint NOT NULL
 );
 
-CREATE TABLE listing.booked(
-    booked_ID SERIAL NOT NULL PRIMARY KEY,
-    checkIn DATE NOT NULL,
-    checkOut DATE NOT NULL,
-    listing_ID int NOT NULL
+CREATE TABLE Booking(
+    Booked_ID SERIAL NOT NULL PRIMARY KEY,
+    Check_in DATE NOT NULL,
+    Check_out DATE NOT NULL,
+    Listing_ID int NOT NULL
+);
+
+CREATE TABLE Booking2(
+    Booked_ID SERIAL NOT NULL PRIMARY KEY,
+    Booked_dates DATERANGE NOT NULL,
+    Listing_ID int NOT NULL
 );
 
 
 
-ALTER TABLE listing.booked ADD FOREIGN KEY (listing_ID) REFERENCES listing.main;
+ALTER TABLE booking ADD FOREIGN KEY (Listing_ID) REFERENCES listing;
 
 
+-- COPY listing (Listing_ID, Mon_min, Tue_min, Wed_min, Thu_min, Fri_min, Sat_min, Sun_min, Max_stay)
+-- FROM './' DELIMITER ',' CSV HEADER;
+
+-- COPY Booking (Booked_ID, Check_in, Check_out, Listing_ID)
+-- FROM '/Users/jimmyma/hackreactor/calendar/BookingData.csv' DELIMITER '|' CSV HEADER;
+-- CREATE INDEX idx_booking2_listing ON booking2(listing_id);
+
+-- ALTER TABLE booking2 ADD CONSTRAINT EXCLUDE USING gist (Listing_ID WITH =, Booked_dates WITH &&);
