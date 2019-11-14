@@ -28,7 +28,7 @@ function shouldCompress(req, res) {
   return compression.filter(req, res);
 }
 
-// app.use('/', express.static(path.join(__dirname, '..', 'public')));
+app.use('/', express.static(path.join(__dirname, '..', 'public')));
 
 app.use('/rooms/:id', express.static(path.join(__dirname, '..', 'public')));
 
