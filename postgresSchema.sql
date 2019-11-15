@@ -23,11 +23,7 @@ CREATE TABLE Booking(
     Listing_ID int NOT NULL
 );
 
-CREATE TABLE Booking2(
-    Booked_ID SERIAL NOT NULL PRIMARY KEY,
-    Booked_dates DATERANGE NOT NULL,
-    Listing_ID int NOT NULL
-);
+
 
 
 
@@ -37,8 +33,7 @@ ALTER TABLE booking ADD FOREIGN KEY (Listing_ID) REFERENCES listing;
 -- COPY listing (Listing_ID, Mon_min, Tue_min, Wed_min, Thu_min, Fri_min, Sat_min, Sun_min, Max_stay)
 -- FROM './' DELIMITER ',' CSV HEADER;
 
--- COPY Booking (Booked_ID, Check_in, Check_out, Listing_ID)
--- FROM '/Users/jimmyma/hackreactor/calendar/BookingData.csv' DELIMITER '|' CSV HEADER;
--- CREATE INDEX idx_booking2_listing ON booking2(listing_id);
+-- \COPY Booking (Booked_ID, Check_in, Check_out, Listing_ID) FROM '/home/ec2-user/BookingData.csv' DELIMITER '|' CSV HEADER;
+-- CREATE INDEX idx_booking2_listing ON booking(listing_id);
 
 -- ALTER TABLE booking2 ADD CONSTRAINT EXCLUDE USING gist (Listing_ID WITH =, Booked_dates WITH &&);
