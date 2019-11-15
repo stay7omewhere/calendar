@@ -1,10 +1,14 @@
+require('newrelic');
 const express = require('express');
 const path = require('path');
 const compression = require('compression');
 const router = require('./router.js');
+const bodyParser = require('body-parser')
 
 const app = express();
 const port = 3004;
+
+app.use(bodyParser.json());
 
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*'); // update to match the domain you will make the request from
